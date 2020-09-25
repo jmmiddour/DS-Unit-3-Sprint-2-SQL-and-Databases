@@ -2,8 +2,7 @@
 import os
 from dotenv import load_dotenv
 import pymongo
-# import psycopg2
-# import csv
+from pdb import set_trace as breakpoint
 
 # Load contents of .env file:
 load_dotenv()
@@ -16,3 +15,5 @@ MONGO_CLUST = os.getenv('MONGO_CLUST', default='OOPS')
 uri = f'mongodb+srv://{MONGO_USER}:{MONGO_PASS}@{MONGO_CLUST}?retryWrites=true&w=majority'
 client = pymongo.MongoClient(uri)
 print('URI:', uri)
+
+breakpoint()
